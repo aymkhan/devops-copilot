@@ -1,0 +1,6 @@
+# Secrets: never upload
+.env
+
+# Python workspace: anyone can recreate it
+.venv/
+__pycache__/
