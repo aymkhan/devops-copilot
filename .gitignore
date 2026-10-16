@@ -1,8 +1,7 @@
-# Secrets: never upload
+# Secrets
 .env
 
 # Editor files
-ai-recipes.py
 .idea/
 
 # Python workspace: anyone can recreate it
