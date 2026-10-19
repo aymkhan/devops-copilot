@@ -3,6 +3,7 @@
 
 # Editor files
 .idea/
+ai-call.py
 
 # Python workspace: anyone can recreate it
 .venv/
