@@ -3,7 +3,10 @@
 
 # Editor files
 .idea/
-ai-call.py
+ai_call.py
+ai-question.txt
+ai_test_set.json
+ai_evals.py
 
 # Python workspace: anyone can recreate it
 .venv/

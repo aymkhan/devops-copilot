@@ -1,0 +1,168 @@
+[
+  {
+    "id": "docker-port-in-use",
+    "input": "Error response from daemon: driver failed programming external connectivity on endpoint web: Bind for 0.0.0.0:8080 failed: port is already allocated",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high"],
+      "mention_any": ["port", "8080", "in use"]
+    }
+  },
+  {
+    "id": "k8s-image-typo",
+    "input": "Failed to pull image \"nginx:latestt\": rpc error: code = NotFound desc = failed to pull and unpack image \"docker.io/library/nginx:latestt\": not found",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high", "medium"],
+      "mention_any": ["latestt", "typo", "misspel"]
+    }
+  },
+  {
+    "id": "linux-permission-denied",
+    "input": "bash: ./deploy.sh: Permission denied",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high", "medium"],
+      "mention_any": ["chmod", "execute"]
+    }
+  },
+  {
+    "id": "python-module-missing",
+    "input": "ModuleNotFoundError: No module named 'dotenv'",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high"],
+      "mention_any": ["pip install", "python-dotenv"]
+    }
+  },
+  {
+    "id": "vague-exit-status",
+    "input": "Error: exit status 1",
+    "expected": {
+      "is_error": true,
+      "confidence": ["low"],
+      "mention_any": []
+    }
+  },
+  {
+    "id": "aem-missing-gson",
+    "input": "org.osgi.framework.BundleException: Unable to resolve com.mycompany.core [512](R 512.0): missing requirement [com.mycompany.core [512](R 512.0)] osgi.wiring.package; (&(osgi.wiring.package=com.google.gson)(version>=2.8.0)(!(version>=3.0.0)))",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high", "medium"],
+      "mention_any": ["gson"]
+    }
+  },
+  {
+    "id": "k8s-oomkilled",
+    "input": "Last State: Terminated\n  Reason: OOMKilled\n  Exit Code: 137",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high"],
+      "mention_any": ["memory"]
+    }
+  },
+  {
+    "id": "k8s-crashloop",
+    "input": "Warning  BackOff  kubelet  Back-off restarting failed container web in pod web-7d9f8b6c5-x2k4p",
+    "expected": {
+      "is_error": true,
+      "confidence": ["medium", "low"],
+      "mention_any": ["logs"]
+    }
+  },
+  {
+    "id": "postgres-connection-refused",
+    "input": "psql: error: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high", "medium"],
+      "mention_any": ["running", "start"]
+    }
+  },
+  {
+    "id": "disk-full",
+    "input": "write /var/lib/docker/overlay2/3f2a/diff/app.log: no space left on device",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high"],
+      "mention_any": ["space", "disk"]
+    }
+  },
+  {
+    "id": "git-push-rejected",
+    "input": "! [rejected]        main -> main (fetch first)\nerror: failed to push some refs to 'https://github.com/example/app.git'",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high"],
+      "mention_any": ["pull", "fetch"]
+    }
+  },
+  {
+    "id": "tls-cert-expired",
+    "input": "x509: certificate has expired or is not yet valid: current time 2026-10-19T10:00:00Z is after 2026-09-30T23:59:59Z",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high"],
+      "mention_any": ["expired", "renew"]
+    }
+  },
+  {
+    "id": "dns-typo",
+    "input": "curl: (6) Could not resolve host: api.exmple.com",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high", "medium"],
+      "mention_any": ["exmple", "typo", "misspel", "dns"]
+    }
+  },
+  {
+    "id": "yaml-indentation",
+    "input": "error: error parsing deployment.yaml: error converting YAML to JSON: yaml: line 12: mapping values are not allowed in this context",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high", "medium"],
+      "mention_any": ["indent", "line 12"]
+    }
+  },
+   {
+    "id": "aem-missing-jsp",
+    "input": "*ERROR* [12.123.4.567] GET /content/en_US/abc.html HTTP/1.1] com.adobe.cq.sightly.WCMScriptHelper Failed to locate script metadata.jsp",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high", "medium"],
+      "mention_any": ["metadata.jsp", "deleted"]
+    }
+  },
+   {
+    "id": "aem-no-content",
+    "input": "*ERROR* [12.123.4.567] GET /content/en_US/abc/chapter-1.html HTTP/1.1] org.apache.jsp.libs.cq.Page.Page_jsp resource has no content. referrer=null",
+    "expected": {
+      "is_error": true,
+      "confidence": ["high", "medium"],
+      "mention_any": ["content node", "jcr:content"]
+    }
+  },
+
+  {
+    "id": "not-error-pizza",
+    "input": "What's the best pizza topping?",
+    "expected": {
+      "is_error": false
+    }
+  },
+  {
+    "id": "not-error-success-log",
+    "input": "deployment.apps/web successfully rolled out\n3/3 pods running",
+    "expected": {
+      "is_error": false
+    }
+  },
+  {
+    "id": "not-error-question",
+    "input": "How do I learn Kubernetes?",
+    "expected": {
+      "is_error": false
+    }
+  }
+]
