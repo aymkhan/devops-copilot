@@ -2,7 +2,7 @@
 
 An AI helper that explains error messages in plain English.
 
-Paste an error and get a simple explanation of what went wrong and what to try next. Then ask follow-up questions about it.
+Paste an error and get a simple explanation of what went wrong and what to try next. You can ask follow-up questions about the error.
 
 ## How to run
 
