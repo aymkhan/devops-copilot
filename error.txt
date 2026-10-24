@@ -1,1 +1,2 @@
 BundleException: Unable to resolve com.mycompany.core ... osgi.wiring.package=com.google.gson
+
