@@ -11,3 +11,6 @@ ai_evals.py
 # Python workspace: anyone can recreate it
 .venv/
 __pycache__/
+
+# Documentation markdown files for this project (private, not uploaded)
+ai-engineer-notes/
