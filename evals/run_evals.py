@@ -5,10 +5,10 @@ Evals script to run against each test from test_set.json
 '''
 
 import json
-from explain_error import explain_error
+from copilot.explain_error import explain_error
 
 # open/read the test set file
-tests = json.load(open("test_set.json"))
+tests = json.load(open("evals/test_set.json"))
 
 # counter for passed tests
 passed = 0

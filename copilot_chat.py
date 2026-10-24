@@ -4,8 +4,8 @@ October 2026
 DevOps Helper/Copilot chatbot
 '''
 
-from explain_error import explain_error
-from chat import ask
+from copilot.explain_error import explain_error
+from copilot.chat import ask
 import sys
 
 '''
